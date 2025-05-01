@@ -21,7 +21,7 @@ class TasksPolicy
      */
     public function view(User $user, Tasks $tasks): bool
     {
-        return false;
+        return $user->id === $tasks->user_id;
     }
 
     /**
